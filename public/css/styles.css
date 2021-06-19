@@ -1,0 +1,66 @@
+
+.heading{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.box{
+  max-width: 25rem;
+  margin: 3.125rem auto;
+  background: white;
+  border-radius: 0.313rem;
+  box-shadow: 0.313rem 0.313rem 0.938rem -0.313rem;
+  text-align: center;
+  background-color: #FCE38A;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+#piechart{
+  margin: auto;
+}
+
+
+
+.searchtext{
+  text-align: center;
+  font-family: "archia";
+}
+
+
+
+.form{
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+
+
+input{
+      width:28%;
+      height:28%;
+      font: 16px arial,sans-serif;
+      color: rgba(0,0,0,.87);
+      line-height: 34px;
+      height: 34px !important;
+      padding-inline-end: 44px;
+      padding-inline-start: 52px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+      -webkit-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+}
+
+
+
+.btn{
+  margin-bottom: 0.5%;
+}

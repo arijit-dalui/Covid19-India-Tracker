@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Covid19 India</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Cases'],
+          ['Total Confirmed',     <%= total %>],
+          ['Total Deaths', <%= death %>],
+          ['Total Recovered', <%= recovered %>]
+        ]);
+
+
+
+        var options = {
+          backgroundColor: '#EAFFD0',
+          title: 'Covid Updates'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+  </head>
+
+
+
+
+
+  <body style="background-color: #EAFFD0">
+    <h1 class="heading">Covid19 India Daily Updates</h1>
+    <div class="row">
+
+
+    <div class="box col-lg-4 col-md-3">
+      <p>
+        Total Confirmed Cases
+      </p>
+      <br>
+      <h3><%= total %></h1>
+    </div>
+    <div class="box col-lg-4 col-md-3">
+      <p>Total Death Cases</p>
+      <br>
+      <h3><%= death %></h3>
+    </div>
+    </div>
+
+    <div id="piechart" class="col-lg-6" style="width: 600px; height: 500px;"></div>
+
+
+    <p class="searchtext">Search a state</p>
+      <div class="form">
+      <form class="" action="/" method="post">
+        <input type="text" autocomplete="off" spellcheck="false"  name="textfield" placeholder="State Name" value="">
+        <button class="btn btn-primary btn-sm" type="submit" name="button">Search</button>
+      </form>
+      </div>
+
+      <% var x=0,str1,str2,str3; %>
+      <% for(var i=0;i< regional.length; i++){ %>
+        <% if(regional[i].loc === statedata){ %>
+          <% str1 = regional[i].totalConfirmed; %>
+           <% str2 = regional[i].deaths %>
+           <% str3 = regional[i].loc %>
+           <div class="box col-lg-4 col-md-3 lower">
+             <h2><%= str3 %></h2>
+             <br>
+             <h3>
+               Total Confirmed Cases
+             </h3>
+             <h3><%= str1 %></h3>
+             <br>
+             <h3>Total deaths</h3>
+             <h3><%= str2 %></h3>
+           </div>
+
+          <% } %>
+      <% } %>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
